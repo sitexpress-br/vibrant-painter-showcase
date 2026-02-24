@@ -1,15 +1,14 @@
 
 
-# Header com Fundo Branco Fixo
+# Remover Email e Última Sessão (Credits)
 
-## Mudança
-Alterar o header para ter fundo branco permanente, removendo o estado transparente inicial (antes do scroll).
+## Mudanças
 
-## Arquivo: `src/components/Header.tsx`
+### 1. `src/pages/Index.tsx`
+- **Remover o bloco de email** (linhas 406-414): O item de contato com ícone de Mail e "contact@ambiance-renovation.ch" na seção "Demander un Devis"
+- **Remover o import `Mail`** da lista de imports do lucide-react (já que não será mais usado)
+- **Remover `<Credits />`** (linha 456) e o import correspondente (linha 4)
 
-- Remover a lógica condicional de `isScrolled` para o background do header
-- Aplicar `bg-background/95 backdrop-blur-md shadow-lg` como classe fixa, independente do scroll
-- Atualizar as cores do texto dos links do menu para sempre usar `text-foreground` (em vez de `text-white` quando não scrollado)
-- Atualizar a cor do botão mobile (hambúrguer) para sempre usar `text-foreground`
-- A variável `isScrolled` e o `useEffect` do scroll podem ser removidos, já que não serão mais necessários
+### 2. Nenhum outro arquivo precisa ser alterado
+O componente `Credits.tsx` pode permanecer no projeto, apenas não será mais renderizado.
 
