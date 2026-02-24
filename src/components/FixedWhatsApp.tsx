@@ -1,5 +1,5 @@
 const FixedWhatsApp = () => {
-  const whatsappNumber = "5511987654321"; // Replace with actual number
+  const whatsappNumber = "41764459436";
   const whatsappUrl = `https://wa.me/${whatsappNumber}`;
 
   return (
@@ -10,7 +10,7 @@ const FixedWhatsApp = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="wc_whatsapp"
-          aria-label="Fale conosco no WhatsApp"
+          aria-label="Contactez-nous sur WhatsApp"
         />
         <a
           href={whatsappUrl}
@@ -18,7 +18,7 @@ const FixedWhatsApp = () => {
           rel="noopener noreferrer"
           className="wc_whatsapp_secondary"
         >
-          <p>Fale conosco agora!</p>
+          <p>Contactez-nous maintenant !</p>
         </a>
       </div>
 
