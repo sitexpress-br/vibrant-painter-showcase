@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
-import Credits from "@/components/Credits";
+
 import Footer from "@/components/Footer";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import FixedWhatsApp from "@/components/FixedWhatsApp";
@@ -9,7 +9,7 @@ import GalleryLightbox from "@/components/GalleryLightbox";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Paintbrush, Home, Sparkles, CheckCircle, Clock, Shield, Award, Star, Mail, MapPin } from "lucide-react";
+import { Paintbrush, Home, Sparkles, CheckCircle, Clock, Shield, Award, Star, MapPin } from "lucide-react";
 import heroImage1 from "@/assets/hero-bg-1.jpg";
 import heroImage2 from "@/assets/hero-bg-2.jpg";
 import heroImage3 from "@/assets/hero-bg-3.jpg";
@@ -403,15 +403,6 @@ const Index = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 gradient-accent rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="text-white" size={24} />
-                  </div>
-                  <div>
-                    <p className="font-heading font-semibold mb-1">Email</p>
-                    <p className="text-muted-foreground font-body">contact@ambiance-renovation.ch</p>
-                  </div>
-                </div>
 
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
@@ -453,7 +444,7 @@ const Index = () => {
       </section>
 
       <Footer />
-      <Credits />
+      
     </div>
   );
 };
