@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -6,7 +7,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-2xl font-heading font-bold mb-4 text-gradient">Ambiance Rénovation</h3>
+            <img src={logo} alt="Ambiance Rénovation" className="h-12 mb-4 brightness-0 invert" />
             <p className="text-background/80 font-body">
               Spécialisée dans la peinture du bâtiment et les travaux de rénovation intérieure et extérieure depuis 2010.
             </p>
