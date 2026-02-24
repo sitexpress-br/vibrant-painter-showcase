@@ -1,47 +1,40 @@
 
 
-# Logo and Primary Color Update
+# Atualização do Logotipo e Cor Principal
 
-## Overview
-Integrate the new Ambiance Renovation logo and update the primary color to `#35799d` (a medium teal-blue) across the entire site.
+## Resumo
+Substituir o logotipo atual pelo novo (com o martelo e texto "AMBIANCE RÉNOVATION INTÉRIEUR ET EXTÉRIEUR SA LTD") e ajustar a cor principal para um tom mais versátil e abrangente.
 
-## Changes
+## Mudanças
 
-### 1. Copy Logo to Project
-- Copy `user-uploads://logo.png` to `src/assets/logo.png`
-- Also copy to `public/logo.png` for favicon/meta usage
+### 1. Substituir o Logotipo
+- Copiar `user-uploads://logo-removebg-preview.png` para `src/assets/logo.png` (substituindo o atual)
+- Copiar também para `public/logo.png` (favicon)
 
-### 2. Update Primary Color (`#35799d`)
-The hex `#35799d` converts to approximately **HSL(197, 48%, 41%)**. This will replace the current deep navy (`215 35% 26%`) throughout `src/index.css`:
+### 2. Ajustar a Cor Principal
+A cor atual `#35799d` (HSL 197, 48%, 41%) é um azul-esverdeado médio. Para torná-la "mais abrangente", vou ajustá-la para um tom ligeiramente mais neutro e versátil, um azul mais equilibrado que combine melhor com diferentes contextos:
 
-- **Light mode primary**: `197 48% 41%`
-- **Dark mode primary**: `197 48% 51%` (slightly lighter for dark backgrounds)
-- **Gradients**: Updated to use the new primary hue
-- **Ring, sidebar-primary, sidebar-ring**: All updated to match
+- **Nova cor principal**: `#2d7a9c` -- HSL(195, 55%, 39%) -- um azul mais puro e profundo, menos esverdeado
+- **Modo escuro**: HSL(195, 50%, 50%) -- versão mais clara para fundos escuros
+- **Gradientes**: Atualizados para usar o novo tom, com transições mais suaves
 
-### 3. Header Logo (`src/components/Header.tsx`)
-- Replace the `Paintbrush2` icon + text with an `<img>` tag using the imported logo
-- Remove the Paintbrush2 icon import
-- Import the logo from `@/assets/logo.png`
-- Size the logo appropriately (~40-48px height)
+### 3. Arquivos a Modificar
 
-### 4. Footer Brand (`src/components/Footer.tsx`)
-- Replace the text-only "Ambiance Renovation" heading with the logo image
-- Import logo from `@/assets/logo.png`
+| Arquivo | Mudança |
+|---------|---------|
+| `src/assets/logo.png` | Substituir pelo novo logotipo |
+| `public/logo.png` | Substituir pelo novo logotipo (favicon) |
+| `src/index.css` | Ajustar valores HSL do primary, gradientes e ring |
 
-### 5. Update Favicon (`index.html`)
-- Update the favicon `<link>` to point to `/logo.png` (from the public directory copy)
+### Detalhes Técnicos
 
----
+**Variáveis CSS atualizadas:**
+- `--primary` (light): `195 55% 39%`
+- `--primary` (dark): `195 50% 50%`
+- `--ring`: Acompanha o novo primary
+- `--accent`: Ajustado para complementar
+- `--gradient-primary`: Transição do novo azul para o dourado quente
+- `--sidebar-primary` e `--sidebar-ring`: Acompanham
 
-## Files to Modify
-
-| File | Change |
-|------|--------|
-| `src/assets/logo.png` | New file (copy from upload) |
-| `public/logo.png` | New file (copy for favicon) |
-| `src/index.css` | Update primary color HSL values and gradients |
-| `src/components/Header.tsx` | Replace icon+text with logo image |
-| `src/components/Footer.tsx` | Add logo image to footer brand section |
-| `index.html` | Update favicon to `/logo.png` |
+**Nota sobre o logotipo:** O novo logo já contém o texto completo "AMBIANCE RÉNOVATION INTÉRIEUR ET EXTÉRIEUR SA LTD", portanto o Header e Footer continuam usando a tag `<img>` sem necessidade de texto adicional.
 
