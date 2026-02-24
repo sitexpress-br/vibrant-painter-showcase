@@ -1,40 +1,15 @@
 
 
-# Atualização do Logotipo e Cor Principal
+# Header com Fundo Branco Fixo
 
-## Resumo
-Substituir o logotipo atual pelo novo (com o martelo e texto "AMBIANCE RÉNOVATION INTÉRIEUR ET EXTÉRIEUR SA LTD") e ajustar a cor principal para um tom mais versátil e abrangente.
+## Mudança
+Alterar o header para ter fundo branco permanente, removendo o estado transparente inicial (antes do scroll).
 
-## Mudanças
+## Arquivo: `src/components/Header.tsx`
 
-### 1. Substituir o Logotipo
-- Copiar `user-uploads://logo-removebg-preview.png` para `src/assets/logo.png` (substituindo o atual)
-- Copiar também para `public/logo.png` (favicon)
-
-### 2. Ajustar a Cor Principal
-A cor atual `#35799d` (HSL 197, 48%, 41%) é um azul-esverdeado médio. Para torná-la "mais abrangente", vou ajustá-la para um tom ligeiramente mais neutro e versátil, um azul mais equilibrado que combine melhor com diferentes contextos:
-
-- **Nova cor principal**: `#2d7a9c` -- HSL(195, 55%, 39%) -- um azul mais puro e profundo, menos esverdeado
-- **Modo escuro**: HSL(195, 50%, 50%) -- versão mais clara para fundos escuros
-- **Gradientes**: Atualizados para usar o novo tom, com transições mais suaves
-
-### 3. Arquivos a Modificar
-
-| Arquivo | Mudança |
-|---------|---------|
-| `src/assets/logo.png` | Substituir pelo novo logotipo |
-| `public/logo.png` | Substituir pelo novo logotipo (favicon) |
-| `src/index.css` | Ajustar valores HSL do primary, gradientes e ring |
-
-### Detalhes Técnicos
-
-**Variáveis CSS atualizadas:**
-- `--primary` (light): `195 55% 39%`
-- `--primary` (dark): `195 50% 50%`
-- `--ring`: Acompanha o novo primary
-- `--accent`: Ajustado para complementar
-- `--gradient-primary`: Transição do novo azul para o dourado quente
-- `--sidebar-primary` e `--sidebar-ring`: Acompanham
-
-**Nota sobre o logotipo:** O novo logo já contém o texto completo "AMBIANCE RÉNOVATION INTÉRIEUR ET EXTÉRIEUR SA LTD", portanto o Header e Footer continuam usando a tag `<img>` sem necessidade de texto adicional.
+- Remover a lógica condicional de `isScrolled` para o background do header
+- Aplicar `bg-background/95 backdrop-blur-md shadow-lg` como classe fixa, independente do scroll
+- Atualizar as cores do texto dos links do menu para sempre usar `text-foreground` (em vez de `text-white` quando não scrollado)
+- Atualizar a cor do botão mobile (hambúrguer) para sempre usar `text-foreground`
+- A variável `isScrolled` e o `useEffect` do scroll podem ser removidos, já que não serão mais necessários
 
