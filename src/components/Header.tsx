@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
-import { Menu, X, Paintbrush2 } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,11 +41,10 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <motion.div
-          className={`text-2xl font-heading font-bold flex items-center gap-2 transition-colors ${isScrolled ? "text-foreground" : "text-white"}`}
+          className="flex items-center"
           whileHover={{ scale: 1.05 }}
         >
-          <Paintbrush2 className={isScrolled ? "text-primary" : "text-white"} size={32} />
-          Ambiance Rénovation
+          <img src={logo} alt="Ambiance Rénovation" className="h-12" />
         </motion.div>
 
         <nav className="hidden md:flex items-center gap-8">
