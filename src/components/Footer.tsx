@@ -55,7 +55,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-background/20 mt-8 pt-8 text-center text-background/60 font-body text-sm">
-          © 2025 Ambiance Rénovation Peinture Sa. Tous droits réservés.
+          © {new Date().getFullYear()} Ambiance Rénovation Peinture Sa. Tous droits réservés.
         </div>
       </div>
     </footer>
